@@ -32,7 +32,7 @@ def get_filters():
 
     if filter_time == "month":
         while month not in ["january", "februray", "march", "april", "may", "june"]:
-            month = input("Which moth? January, February, March, April, May, or June?").lower()
+            month = input("Which moth? January, February, March, April, May, or June?").lower() # get user input for month (all, january, february, ... , june)
     elif filter_time == "day":
         while True:
             try:
@@ -47,6 +47,11 @@ def get_filters():
         while day < 1 or day > 7:
             day = int(input("Which day? Please type your response as an integer (e.g., 1=Monday)."))
 
+<<<<<<< .merge_file_a19376
+=======
+     HINT: Use a while loop to handle invalid inputs
+
+>>>>>>> .merge_file_a22276
     print('-' * 40)
     return city, month, day, filter_time
 
@@ -182,7 +187,7 @@ def main():
             city = "new york city"
 
         while data_view not in ["yes", "no"]:
-            data_view = input("Would you like to view individual trip data? Type 'yes' or 'no'.\n").lower()
+            data_view = input("Would you like to view individual trip data? Type 'yes' or 'no'.\n").lower() # get user input for see raw data
 
         file = open(CITY_DATA[city], newline='')
         reader = csv.DictReader(file)
@@ -190,7 +195,7 @@ def main():
         while data_view == "yes":
             for i, row in enumerate(reader):
                 if i % 5 == 0 and i > 0:
-                    data_view = input("Would you like to view individual trip data? Type 'yes' or 'no'.\n").lower()
+                    data_view = input("Would you like to view individual trip data? Type 'yes' or 'no'.\n").lower() # get user input for see more raw data
                     if data_view != "yes":
                         break
                 print(row)
