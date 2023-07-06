@@ -197,7 +197,7 @@ def main():
             city = "new york city"
 
         while data_view not in ["yes", "no"]:
-            data_view = input("Would you like to view individual trip data? Type 'yes' or 'no'.\n").lower()
+            data_view = input("Would you like to view individual trip data? Type 'yes' or 'no'.\n").lower() # get user input for see raw data
 
         file = open(CITY_DATA[city], newline='')
         reader = csv.DictReader(file)
@@ -205,7 +205,7 @@ def main():
         while data_view == "yes":
             for i, row in enumerate(reader):
                 if i % 5 == 0 and i > 0:
-                    data_view = input("Would you like to view individual trip data? Type 'yes' or 'no'.\n").lower()
+                    data_view = input("Would you like to view individual trip data? Type 'yes' or 'no'.\n").lower() # get user input for see more raw data
                     if data_view != "yes":
                         break
                 print(row)
