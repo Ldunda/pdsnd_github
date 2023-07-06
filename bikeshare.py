@@ -23,7 +23,7 @@ def get_filters():
     filter_time = ""
 
     while city not in ['washington', 'new york', 'chicago']:
-        city = input("Would you like to see data for Chicago, New York, or Washington?").lower()
+        city = input("Would you like to see data for Chicago, New York, or Washington?").lower() # get user input for city (chicago, new york city, washington).
 
     print("Looks like you want to hear about", city.title(), "! If this is not true, restart the program now!\n")
 
@@ -36,20 +36,16 @@ def get_filters():
     elif filter_time == "day":
         while True:
             try:
-                day = int(input("Which day? Please type your response as an integer (e.g., 1=Monday)."))
+                day = int(input("Which day? Please type your response as an integer (e.g., 1=Monday).")) # get user input for day of week (all, monday, tuesday, ... sunday)
                 if day > 0 and day <= 7:
                     break
             except:
                 print("Please enter a valid integer for the day of the week.")
     elif filter_time == "both":
         while month not in ["january", "february", "march", "april", "may", "june"]:
-            month = input("Which moth? January, February, March, April, May, or June?").lower()
+            month = input("Which moth? January, February, March, April, May, or June?").lower() # get user input for month (all, january, february, ... , june)
         while day < 1 or day > 7:
             day = int(input("Which day? Please type your response as an integer (e.g., 1=Monday)."))
-
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    # get user input for month (all, january, february, ... , june)
-    # get user input for day of week (all, monday, tuesday, ... sunday)
 
     print('-' * 40)
     return city, month, day, filter_time
