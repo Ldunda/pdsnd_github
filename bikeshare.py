@@ -10,8 +10,6 @@ CITY_DATA = {'chicago': 'chicago.csv',
 
 def get_filters():
     """
-    Asks user to specify a city, month, and day to analyze.
-
     Returns:
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all" to apply no month filter
@@ -80,8 +78,6 @@ def load_data(city, month, day, filter_time):
         df = df[df['Start Time'].dt.weekday == day]
 
     """
-    Loads data for the specified city and filters by month and day if applicable.
-
     Args:
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all" to apply no month filter
